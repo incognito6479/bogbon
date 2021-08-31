@@ -1,0 +1,160 @@
+{% load static %}
+<footer class="footer-dark bg-slate-blue">
+    <div class="footer-top padding-five-tb lg-padding-eight-tb md-padding-50px-tb">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-3 col-md-5 col-sm-6 order-sm-1 order-lg-0 md-margin-50px-bottom xs-margin-25px-bottom">
+                    {% if '/en/' in request.path %}
+                        <a href="{% url 'mainapp:index_en' %}" class="footer-logo margin-20px-bottom d-block"><img
+                                src="{% static 'img/logo-white.png' %}" data-at2x="images/logo-white@2x.png" alt=""></a>
+                        <p class="w-80 sm-w-100 margin-20px-bottom">A modern in vitro laboratory was built and launched
+                            in 2020 as part of the Bogbon agricultural complex.</p>
+                    {% elif '/uz/' in request.path %}
+                        <a href="{% url 'mainapp:index_uz' %}" class="footer-logo margin-20px-bottom d-block"><img
+                                src="{% static 'img/logo-white.png' %}" data-at2x="images/logo-white@2x.png" alt=""></a>
+                        <p class="w-80 sm-w-100 margin-20px-bottom">“Боғбон” агрокомплекси таркибида 2020 йилда
+                            замонавий “In vitro” лабораторияси барпо этилди ва ишга туширилди.</p>
+                    {% else %}
+                        <a href="{% url 'mainapp:index' %}" class="footer-logo margin-20px-bottom d-block"><img
+                                src="{% static 'img/logo-white.png' %}" data-at2x="images/logo-white@2x.png" alt=""></a>
+                        <p class="w-80 sm-w-100 margin-20px-bottom">Современная лаборатория In vitro построена и
+                            запущена в 2020 году в составе агрокомплекса Bogbon.</p>
+                    {% endif %}
+                    <div class="social-icon-style-12">
+                        <ul class="extra-small-icon light">
+                            <li><a class="facebook" href="https://www.facebook.com/" target="_blank"><i
+                                    class="fab fa-facebook-f"></i></a></li>
+                            <li><a class="dribbble" href="http://www.dribbble.com" target="_blank"><i
+                                    class="fab fa-dribbble"></i></a></li>
+                            <li><a class="twitter" href="http://www.twitter.com" target="_blank"><i
+                                    class="fab fa-twitter"></i></a></li>
+                            <li><a class="instagram" href="http://www.instagram.com" target="_blank"><i
+                                    class="fab fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-2 col-sm-4 order-sm-3 order-lg-0 xs-margin-25px-bottom">
+                    {% if '/en/' in request.path %}
+                        <span class="alt-font font-weight-500 d-block text-white margin-20px-bottom xs-margin-10px-bottom">Company</span>
+                        <ul>
+                            <li><a href="{% url 'mainapp:article_list_en' %}">Articles</a></li>
+                        </ul>
+                    {% elif '/uz/' in request.path %}
+                        <span class="alt-font font-weight-500 d-block text-white margin-20px-bottom xs-margin-10px-bottom">Kompaniya</span>
+                        <ul>
+                            <li><a href="{% url 'mainapp:article_list_uz' %}">Maqolalar</a></li>
+                        </ul>
+                    {% else %}
+                        <span class="alt-font font-weight-500 d-block text-white margin-20px-bottom xs-margin-10px-bottom">Компания</span>
+                        <ul>
+                            <li><a href="{% url 'mainapp:article_list' %}">Статьи</a></li>
+                        </ul>
+                    {% endif %}
+                </div>
+                <div class="col-12 col-lg-2 col-sm-4 order-sm-4 order-lg-0 xs-margin-25px-bottom">
+                    {% if '/en/' in request.path %}
+                        <span class="alt-font font-weight-500 d-block text-white margin-20px-bottom xs-margin-10px-bottom">Customer</span>
+                        <ul>
+                            <li><a href="{% url 'mainapp:index_en' %}">Client support</a></li>
+                        </ul>
+                    {% elif '/uz/' in request.path %}
+                        <span class="alt-font font-weight-500 d-block text-white margin-20px-bottom xs-margin-10px-bottom">Mijoz</span>
+                        <ul>
+                            <li><a href="{% url 'mainapp:index_uz' %}">Mijozlarni qo'llab-quvvatlash</a></li>
+                        </ul>
+                    {% else %}
+                        <span class="alt-font font-weight-500 d-block text-white margin-20px-bottom xs-margin-10px-bottom">Клиентам</span>
+                        <ul>
+                            <li><a href="{% url 'mainapp:index' %}">Клиентская поддержка</a></li>
+                        </ul>
+                    {% endif %}
+                </div>
+                <div class="col-12 col-lg-2 col-sm-4 order-sm-5 order-lg-0 xs-margin-25px-bottom">
+                    {% if '/en/' in request.path %}
+                        <span class="alt-font font-weight-500 d-block text-white margin-20px-bottom xs-margin-10px-bottom">Additional</span>
+                        <ul>
+                            <li><a href="{% url 'mainapp:index_en' %}">Our story</a></li>
+                        </ul>
+                    {% elif '/uz/' in request.path %}
+                        <span class="alt-font font-weight-500 d-block text-white margin-20px-bottom xs-margin-10px-bottom">Qo'shimcha</span>
+                        <ul>
+                            <li><a href="{% url 'mainapp:index_uz' %}">Bizning hikoyamiz</a></li>
+                        </ul>
+                    {% else %}
+                        <span class="alt-font font-weight-500 d-block text-white margin-20px-bottom xs-margin-10px-bottom">Дополнительно</span>
+                        <ul>
+                            <li><a href="{% url 'mainapp:index' %}">Наша история</a></li>
+                        </ul>
+                    {% endif %}
+                </div>
+                <div class="col-12 col-lg-3 col-md-5 col-sm-6 order-sm-2 order-lg-0 md-margin-50px-bottom xs-no-margin-bottom">
+                    {% if '/en/' in request.path %}
+                        <span class="alt-font font-weight-500 d-block text-white margin-30px-bottom xs-margin-25px-bottom">Latest news</span>
+                    {% elif '/uz/' in request.path %}
+                        <span class="alt-font font-weight-500 d-block text-white margin-30px-bottom xs-margin-25px-bottom">So'ngi yangiliklar</span>
+                    {% else %}
+                        <span class="alt-font font-weight-500 d-block text-white margin-30px-bottom xs-margin-25px-bottom">Последние новости</span>
+                    {% endif %}
+                    <ul>
+                        <li class="media">
+                            <a href="blog-post-layout-01.html"
+                               class="w-75px margin-30px-right sm-margin-15px-right xs-margin-30px-right">
+                                <img src="{% static 'img/blog-img80.jpg' %}" alt="">
+                            </a>
+                            <div class="media-body">
+                                {% if '/en/' in request.path %}
+                                    <a href="{% url 'mainapp:index_en' %}">Text of the first post...</a>
+                                {% elif '/uz/' in request.path %}
+                                    <a href="{% url 'mainapp:index_uz' %}">Birinchi xabar matni...</a>
+                                {% else %}
+                                    <a href="{% url 'mainapp:index' %}">Текст первого поста...</a>
+                                {% endif %}
+                            </div>
+                        </li>
+                        <li class="media">
+                            <a href="blog-post-layout-02.html"
+                               class="w-75px margin-30px-right sm-margin-15px-right xs-margin-30px-right">
+                                <img src="{% static 'img/blog-img79.jpg' %}" alt="">
+                            </a>
+                            <div class="media-body">
+                                {% if '/en/' in request.path %}
+                                    <a href="{% url 'mainapp:index_en' %}">Text of the second post...</a>
+                                {% elif '/uz/' in request.path %}
+                                    <a href="{% url 'mainapp:index_uz' %}">Ikkinchi xabar matni...</a>
+                                {% else %}
+                                    <a href="{% url 'mainapp:index' %}">Текст второго поста...</a>
+                                {% endif %}
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom padding-35px-tb border-top border-color-white-transparent">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 sm-margin-10px-bottom xs-margin-15px-bottom">
+                    <ul class="footer-horizontal-link d-flex flex-column flex-sm-row justify-content-sm-center justify-content-md-start">
+                        {% if '/en/' in request.path %}
+                            <li><a href="{% url 'mainapp:index_en' %}">Privacy policy</a></li>
+                        {% elif '/uz/' in request.path %}
+                            <li><a href="{% url 'mainapp:index_uz' %}">Maxfiylik siyosati</a></li>
+                        {% else %}
+                            <li><a href="{% url 'mainapp:index' %}">Политика конфиденциальности</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+                <div class="col-12 col-md-6 text-left text-sm-center text-md-right last-paragraph-no-margin">
+                    {% if '/en/' in request.path %}
+                        <p>&copy; 2021 Bog'bon. All rights reserved</p>
+                    {% elif '/uz/' in request.path %}
+                        <p>&copy; 2021 Bog'bon. Barcha huquqlar himoyalangan</p>
+                    {% else %}
+                        <p>&copy; 2021 Bog'bon. Все права защищены</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

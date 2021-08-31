@@ -1,0 +1,42 @@
+{% load static %}
+<!doctype html>
+{% if '/en/' in request.path %}
+    <html class="no-js" lang="en">
+{% elif '/uz/' in request.path %}
+    <html class="no-js" lang="uz">
+{% else %}
+    <html class="no-js" lang="ru">
+{% endif %}
+<head>
+    <title>{% block title %}NO TITLE{% endblock %}</title>
+    {# MetaTags #}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1"/>
+    {# End MetaTags #}
+    {# Favicon #}
+    <link rel="shortcut icon" href="{% static 'img/favicon.png' %}">
+    <link rel="apple-touch-icon" href="{% static 'img/apple-touch-icon-57x57.png' %}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{% static 'img/apple-touch-icon-72x72.png' %}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{% static 'img/apple-touch-icon-114x114.png' %}">
+    {# End Favicon #}
+    {# StyleSheet #}
+    <link rel="stylesheet" href="{% static 'css/font-icons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/theme-vendors.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}"/>
+    {# End StyleSheet #}
+</head>
+<body data-mobile-nav-style="classic">
+{% block content %}
+    <h1>NO CONTENT!</h1>
+{% endblock %}
+{# JavaScript #}
+<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/theme-vendors.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/main_edited.js' %}"></script>
+{# End JavaScript #}
+</body>
+<!-- Powered by AlexTheMaggot -->
+</html>

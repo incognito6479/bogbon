@@ -1,0 +1,256 @@
+{% extends 'wrapper.html' %}
+{% load static %}
+{% block title %}Bog`bon - Bosh sahifa{% endblock %}
+{% block content %}
+    {# Header #}
+    {% include 'blocks/header.html' %}
+    {# End Header #}
+    {# TopBlock #}
+    <section class="p-0 mobile-height parallax" data-parallax-background-ratio="0.5"
+             style="background-image: url('{% static 'img/home-corporate-parallex-bg.jpg' %}');">
+        <div class="opacity-light bg-gradient-black-blue z-index-0"></div>
+        <div class="container position-relative">
+            <div class="row justify-content-center">
+                <div class="col-12 col-xl-6 col-lg-7 col-md-10 d-flex flex-column justify-content-center text-center full-screen position-relative z-index-1 md-landscape-h-600px">
+                    <h2 class="text-white alt-font font-weight-600 letter-spacing-minus-1 text-shadow-large sm-no-text-shadow">"IN VITRO" laboratoriyasi</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    {# End TopBlock #}
+    {# AboutBlock #}
+    <section class="big-section">
+        <div class="container">
+            <div class="row align-items-lg-center justify-content-center">
+                <div class="col-12 col-lg-4 col-md-6 fancy-text-box-style-01 text-center text-md-left md-margin-50px-bottom sm-margin-40px-bottom wow animate__fadeIn">
+                    <div class="fancy-text-box padding-3-half-rem-all md-padding-4-rem-all xs-padding-30px-all">
+                        <div class="fancy-text-box-border-left border-color-shamrock-green"></div>
+                        <h1 class="alt-font fancy-text-content font-weight-600 text-extra-dark-gray d-inline-block align-middle letter-spacing-minus-5px">24</h1>
+                        <div class="alt-font text-extra-medium text-extra-dark-gray font-weight-500 text-left d-inline-block align-middle w-90px mx-auto line-height-20px position-relative top-minus-4px">gektar maydonda yo'lashgan bulib</div>
+                        <div class="fancy-text-box-border-right border-color-shamrock-green"></div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-3 col-md-4 text-center text-md-left wow animate__fadeIn" data-wow-delay="0.2s">
+                    <div class="alt-font text-extra-large text-extra-dark-gray font-weight-500 line-height-34px w-85 lg-w-100 sm-margin-15px-bottom">Laboratoriyada 2021 yilda 6 mln dona turli xil mevali va manzarali kўchatlarini etishtirish kўzda tutilgan.</div>
+                </div>
+                <div class="col-12 col-lg-5 col-md-10 text-center text-md-left wow animate__fadeIn" data-wow-delay="0.4s">
+                    <p class="w-85 lg-w-100">“Boғbon” agrokompleksi tarkibida 2020 jilda zamonavij “In vitro” laboratorijasi barpo jetildi va ishga tushirildi. Laboratorijaga Turkija, Hitoj, Jeron davlatlaridan zamonavij tehnologijalar ҳamda laboratorija asbob uskunalari olib kelib ўrnatilgan.</p>
+                    <a href="{% url 'mainapp:index_uz' %}" class="btn btn-link thin btn-extra-large text-extra-dark-gray">Kompaniya haqida</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    {# End AboutBlock #}
+    {# InformationBlock #}
+    <section class="big-section bg-light-gray">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-6 col-md-7 col-sm-8 text-center margin-6-rem-bottom wow animate__fadeIn">
+                    <h4 class="alt-font font-weight-600 text-extra-dark-gray letter-spacing-minus-1px">“IN VITRO” LABORATORIYASI ҲAҚIDA ҚISҚACHA MA'LUMOT</h4>
+                </div>
+            </div>
+            <div class="row row-cols-1 row-cols-lg-3 row-cols-sm-2 justify-content-center">
+                <div class="col md-margin-50px-bottom wow animate__fadeIn">
+                    <div class="feature-box padding-3-rem-lr lg-padding-2-rem-lr sm-padding-1-rem-lr">
+                        <div class="feature-box-icon feature-box-icon-rounded dark bg-white w-130px h-130px rounded-circle box-shadow-large margin-40px-bottom sm-margin-30px-bottom">
+                            <i class="line-icon-Flask icon-large text-shamrock-green"></i>
+                            <div class="feature-box-icon-hover bg-gradient-shamrock-green-light-orange rounded-circle"></div>
+                        </div>
+                        <div class="feature-box-content">
+                            <span class="alt-font font-weight-500 margin-15px-bottom d-block text-extra-dark-gray">Tuproq tahlil laboratoriyasi</span>
+                            <p>Tuproq tahlil laboratoriyalari kunlik 50 dan ortiq tupronamunalarini 15 hil ko'rsatgichlar byicha tahlil natijalarini berish imkoniyatiga ega.</p>
+                            <a href="{% url 'mainapp:index_uz' %}" class="btn btn-link thin btn-large text-extra-dark-gray">Batafsil ma'lumot</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col md-margin-50px-bottom wow animate__fadeIn" data-wow-delay="0.2s">
+                    <div class="feature-box padding-3-rem-lr lg-padding-2-rem-lr sm-padding-1-rem-lr">
+                        <div class="feature-box-icon feature-box-icon-rounded dark bg-white w-130px h-130px rounded-circle box-shadow-large margin-40px-bottom sm-margin-30px-bottom">
+                            <i class="line-icon-Talk-Man icon-large text-shamrock-green"></i>
+                            <div class="feature-box-icon-hover bg-gradient-shamrock-green-light-orange rounded-circle"></div>
+                        </div>
+                        <div class="feature-box-content">
+                            <span class="alt-font font-weight-500 margin-15px-bottom d-block text-extra-dark-gray">Innovatsion agrobozor</span>
+                            <p>Qishloq khujaligi va ommovy dehqonchilik uchun zarur bulgan urug'lar, kuchlar, ishchilarni himoya qilish ishlari, o'quvchilarning barcha texnikasi va texnologik sharoitlarini ta'minlash imkoniyatiga ega bulgan markazlar.</p>
+                            <a href="{% url 'mainapp:index_uz' %}" class="btn btn-link thin btn-large text-extra-dark-gray">Batafsil ma'lumot</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col wow animate__fadeIn" data-wow-delay="0.4s">
+                    <div class="feature-box padding-3-rem-lr lg-padding-2-rem-lr sm-padding-1-rem-lr">
+                        <div class="feature-box-icon feature-box-icon-rounded dark bg-white w-130px h-130px rounded-circle box-shadow-large margin-40px-bottom sm-margin-30px-bottom">
+                            <i class="line-icon-Magnifi-Glass2 icon-large text-shamrock-green"></i>
+                            <div class="feature-box-icon-hover bg-gradient-shamrock-green-light-orange rounded-circle"></div>
+                        </div>
+                        <div class="feature-box-content">
+                            <span class="alt-font font-weight-500 margin-15px-bottom d-block text-extra-dark-gray">Ilmij tadqiqot markazi</span>
+                            <p>Ilmiy tadqiqot markazid yangi nav va klonlarniyratish bilan birgalikda qishloq xojaligi yonalishida talab qilinayotgan talablarni zhil qilishgan holda amaldagi tajribalarini orttirib brish, ilmiy tajriba kadlarniyratish va boshqalarni o'rganish.</p>
+                            <a href="{% url 'mainapp:index_uz' %}" class="btn btn-link thin btn-large text-extra-dark-gray">Batafsil ma'lumot</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {# End InformationBlock #}
+    {# WorkflowBlock #}
+    <section class="big-section cover-background" style="background-image: url('{% static 'img/home-corporate-hand-crafted-bg.jpg' %}');">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-10 col-lg-6 md-margin-9-rem-bottom wow animate__fadeIn">
+                    <div class="w-70 overflow-hidden position-relative xs-w-80">
+                        <img src="{% static 'img/our-process-05.jpg' %}" alt="" />
+                    </div>
+                    <div class="position-absolute right-35px bottom-minus-50px w-50 lg-bottom-minus-30px xs-right-15px" data-wow-delay="0.2s" data-parallax-layout-ratio="1.1">
+                        <img src="{% static 'img/our-process-06.jpg' %}" alt="" />
+                    </div>
+                </div>
+                <div class="col-10 col-xl-4 col-lg-5 offset-lg-1">
+                    <h4 class="alt-font text-extra-dark-gray letter-spacing-minus-1px font-weight-600 margin-4-rem-bottom md-margin-3-rem-bottom wow animate__fadeIn">Ishlab chiqarish va ish jarayoni</h4>
+                    <div class="row">
+                        <div class="col-12 wow animate__fadeIn" data-wow-delay="0.2s">
+                            <div class="feature-box feature-box-left-icon">
+                                <div class="feature-box-content last-paragraph-no-margin">
+                                    <span class="alt-font text-black font-weight-500 d-block margin-5px-bottom">Ishlab chiqarish</span>
+                                    <p class="w-85 xs-w-100">Yillik ishlab chiqarish 15 milliondan ortiq o'simlik materiallarini tashkil etadi.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 wow animate__fadeIn" data-wow-delay="0.2s"><div class="w-100 h-1px bg-medium-gray margin-3-rem-tb md-margin-2-rem-tb"></div></div>
+                        <div class="col-12 wow animate__fadeIn" data-wow-delay="0.4s">
+                            <div class="feature-box feature-box-left-icon">
+                                <div class="feature-box-content last-paragraph-no-margin">
+                                    <span class="alt-font text-black font-weight-500 d-block margin-5px-bottom">Ish jarayoni</span>
+                                    <p class="w-85 xs-w-100">Yaratilgan yangi ish o'rinlari soni 100 tani tashkil etadi.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 margin-4-rem-top d-inline-block wow animate__fadeIn" data-wow-delay="0.4s"><a href="{% url 'mainapp:index_uz' %}" class="btn btn-large btn-expand-ltr text-black section-link">Batafsil ma'lumot<span class="bg-shamrock-green"></span></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {# End WorkflowBlock #}
+    {# StaffBlock #}
+    <section class="bg-light-gray">
+            <div class="container">
+                <div class="row justify-content-center wow animate__fadeIn">
+                    <div class="col-12 col-lg-6 col-md-8 col-sm-10 text-center margin-6-rem-bottom md-margin-4-rem-bottom">
+                        <h4 class="alt-font font-weight-600 text-extra-dark-gray letter-spacing-minus-1px">Ma'muriy xodimlar</h4>
+                        <p class="w-80 mx-auto md-w-100 mb-0">Bu erda siz barcha ishlab chiqarish faoliyatini boshqarishni amalga oshiradiganlar bilan tanishishingiz mumkin.</p>
+                    </div>
+                </div>
+                <div class="row row-cols-1 row-cols-lg-2 row-cols-sm-2">
+                    <div class="col md-margin-30px-bottom xs-margin-15px-bottom wow animate__fadeIn" data-wow-delay="0.2s">
+                        <div class="interactive-banners-style-08 box-shadow-large bg-white h-100 border-radius-6px overflow-hidden">
+                            <div class="interactive-banners-box-image">
+                                <a href="{% url 'mainapp:index' %}">
+                                    <img src="{% static 'img/home-corporate-img-02.jpg' %}" alt="">
+                                    <div class="btn btn-white btn-rounded"><i class="fas fa-arrow-right"></i></div>
+                                    <div class="interactive-banners-box-hover opacity-full-dark bg-transparent-gradient-shamrock-green-light-orange"></div>
+                                </a>
+                            </div>
+                            <div class="interactive-banners-box-content padding-35px-all text-center xs-padding-25px-all">
+                                <a href="{% url 'mainapp:index' %}" class="text-extra-dark-gray text-uppercase text-extra-dark-gray-hover text-medium alt-font font-weight-500 d-block line-height-26px">Haydarov Ilyos Abdirashitovich</a>
+                                <div class="position-relative">
+                                    <span>"In vitro" laboratoriya mudiri</span>
+                                    <div class="interactive-banners-box-sub-title">
+                                        <a href="{% url 'mainapp:index' %}" class="btn btn-link thin btn-large text-shamrock-green">Batafsil ma'lumot</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col xs-margin-15px-bottom wow animate__fadeIn" data-wow-delay="0.4s">
+                        <div class="interactive-banners-style-08 box-shadow-large bg-white h-100 border-radius-6px overflow-hidden">
+                            <div class="interactive-banners-box-image">
+                                <a href="{% url 'mainapp:index' %}">
+                                    <img src="{% static 'img/home-corporate-img-03.jpg' %}" alt="">
+                                    <div class="btn btn-white btn-rounded"><i class="fas fa-arrow-right"></i></div>
+                                    <div class="interactive-banners-box-hover opacity-full-dark bg-transparent-gradient-shamrock-green-light-orange"></div>
+                                </a>
+                            </div>
+                            <div class="interactive-banners-box-content padding-35px-all text-center xs-padding-25px-all">
+                                <a href="{% url 'mainapp:index' %}" class="text-extra-dark-gray text-uppercase text-extra-dark-gray-hover text-medium alt-font font-weight-500 d-block line-height-26px">Rahmatov Muin Orzuyevich</a>
+                                <div class="position-relative">
+                                    <span>Savdo bo'limining bosh menejeri</span>
+                                    <div class="interactive-banners-box-sub-title">
+                                        <a href="{% url 'mainapp:index' %}" class="btn btn-link thin btn-large text-shamrock-green">Batafsil ma'lumot</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    {# End StaffBlock #}
+    {# InformationBlock #}
+    <section class="wow animate__fadeIn">
+            <div class="container">
+                <div class="row margin-8-rem-bottom md-margin-5-rem-bottom xs-margin-3-rem-bottom">
+                    <div class="col-12 col-xl-4 col-lg-5 col-md-6 sm-margin-5-rem-bottom xs-margin-2-rem-bottom">
+                        <h4 class="alt-font font-weight-600 text-extra-dark-gray letter-spacing-minus-1px margin-30px-bottom">Ko'chatlarning mikropropagatsiyasi</h4>
+                        <p class="w-90 sm-w-100">"IN VITRO" laboratoriyasining yillik ko'chatlari 15 million donani tashkil qiladi.</p>
+                    </div>
+                    <div class="col-12 col-lg-6 offset-xl-2 offset-lg-1 col-md-6 margin-30px-bottom">
+                        <div class="progress progress-step-style-01 margin-4-half-rem-bottom sm-margin-6-rem-bottom">
+                            <span class="progress-title alt-font text-small text-extra-dark-gray text-uppercase font-weight-500">Ko'p yillik gullar</span>
+                            <div class="progress-bar bg-gradient-shamrock-green-light-orange" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"><span class="alt-font text-small text-extra-dark-gray font-weight-500">1 mln. dona</span></div>
+                        </div>
+                        <div class="progress progress-step-style-01 margin-4-half-rem-bottom sm-margin-6-rem-bottom">
+                            <span class="progress-title alt-font text-small text-extra-dark-gray text-uppercase font-weight-500">Mevali butalar</span>
+                            <div class="progress-bar bg-gradient-shamrock-green-light-orange" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"><span class="alt-font text-small text-extra-dark-gray font-weight-500">200 ming dona</span></div>
+                        </div>
+                        <div class="progress progress-step-style-01">
+                            <span class="progress-title alt-font text-small text-extra-dark-gray text-uppercase font-weight-500">Dekorativ o'simliklar</span>
+                            <div class="progress-bar bg-gradient-shamrock-green-light-orange" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"><span class="alt-font text-small text-extra-dark-gray font-weight-500">20 ming dona</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row-cols-1 row-cols-lg-3 row-cols-md-2 justify-content-center">
+                    <div class="col col-sm-9 md-margin-40px-bottom xs-margin-30px-bottom wow animate__fadeIn">
+                        <div class="feature-box feature-box-left-icon">
+                            <div class="feature-box-icon">
+                                <i class="line-icon-Navigation-LeftWindow icon-medium text-shamrock-green margin-35px-bottom md-margin-15px-bottom sm-margin-10px-bottom"></i>
+                            </div>
+                            <div class="feature-box-content last-paragraph-no-margin">
+                                <span class="alt-font font-weight-500 margin-10px-bottom d-block text-extra-dark-gray">Hamkorlik</span>
+                                <p class="w-80 lg-w-100 md-w-90 sm-w-100">Hozirgi vaqtda laboratoriyamiz Samarqand veterinariya tibbiyoti instituti, Toshkent davlat agrar universiteti va O'zbekiston Respublikasi Fanlar akademiyasi genomika va bioinformatika markazi bilan hamkorlik qiladi.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-sm-9 md-margin-40px-bottom xs-margin-30px-bottom wow animate__fadeIn" data-wow-delay="0.2s">
+                        <div class="feature-box feature-box-left-icon">
+                            <div class="feature-box-icon">
+                                <i class="line-icon-Cursor-Click2 icon-medium text-shamrock-green margin-35px-bottom md-margin-15px-bottom sm-margin-10px-bottom"></i>
+                            </div>
+                            <div class="feature-box-content last-paragraph-no-margin">
+                                <span class="alt-font font-weight-500 margin-10px-bottom d-block text-extra-dark-gray">Hudud</span>
+                                <p class="w-80 lg-w-100 md-w-90 sm-w-100">Qishloq xo'jaligi majmuasi umumiy maydoni 24,04 gektarni, shu jumladan 0,24 gektar er uchun laboratoriya va 1 gektar maydonga zamonaviy issiqxonani o'z ichiga oladi. 22 gektar maydonda O'zbekiston Respublikasida topilmaydigan 32 turdagi mevali daraxtlarning ko'chatlari keltirildi va o'stirildi.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-sm-9 wow animate__fadeIn" data-wow-delay="0.4s">
+                        <div class="feature-box feature-box-left-icon">
+                            <div class="feature-box-icon">
+                                <i class="line-icon-Gear-2 icon-medium text-shamrock-green margin-35px-bottom md-margin-15px-bottom sm-margin-10px-bottom"></i>
+                            </div>
+                            <div class="feature-box-content last-paragraph-no-margin">
+                                <span class="alt-font font-weight-500 margin-10px-bottom d-block text-extra-dark-gray">Xodimlar</span>
+                                <p class="w-80 lg-w-100 md-w-90 sm-w-100">Laboratoriyaning beshta biotexnologi va agrokimyogari Turkiyaning Adana shahridagi BETA FIDANCHILIK in vitro laboratoriyasida va Erdamlidagi mikrobiologiya laboratoriyasida o'qishdan qaytdi.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    {# End InformationBlock #}
+    {# Footer #}
+    {% include 'blocks/footer.html' %}
+    {# End Footer #}
+    {# ScrollTopButton #}
+    <a class="scroll-top-arrow" href="javascript:void(0);"><i class="feather icon-feather-arrow-up"></i></a>
+    {# End ScrollTopButton #}
+{% endblock %}

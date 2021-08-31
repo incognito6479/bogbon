@@ -1,0 +1,52 @@
+{% extends 'wrapper.html' %}
+{% load static %}
+{% block title %}Статьи{% endblock %}
+{% block content %}
+    {# Header #}
+    {% include 'blocks/header.html' %}
+    {# End Header #}
+    <section class="p-0 mobile-height parallax" data-parallax-background-ratio="0.5" style="background-image: url('{% static 'img/home-corporate-parallex-bg.jpg' %}');">
+        <div class="opacity-light bg-gradient-black-blue z-index-0"></div>
+        <div class="container position-relative">
+            <div class="row justify-content-center">
+                <div class="col-12 col-xl-6 col-lg-7 col-md-10 d-flex flex-column justify-content-center text-center full-screen position-relative z-index-1 md-landscape-h-600px">
+                    <h2 class="text-white alt-font font-weight-600 letter-spacing-minus-1 text-shadow-large sm-no-text-shadow">Статьи</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="bg-light-gray pt-0 padding-eleven-lr xl-padding-two-lr xs-no-padding-lr">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 blog-content">
+                    <ul class="blog-grid blog-wrapper grid grid-loading grid-4col xl-grid-4col lg-grid-3col md-grid-2col sm-grid-2col xs-grid-1col gutter-extra-large">
+                        <li class="grid-sizer"></li>
+                        {% for article in articles %}
+                        <li class="grid-item wow animate__fadeIn">
+                            <div class="blog-post border-radius-5px bg-white box-shadow-medium">
+                                <div class="blog-post-image bg-medium-slate-blue">
+                                    <a href="{{ article.pk }}/" title=""><img src="{{ article.img_preview.url }}" alt=""></a>
+                                </div>
+                                <div class="post-details padding-3-rem-lr padding-2-half-rem-tb">
+                                    <p href="blog-masonry.html" class="alt-font text-small d-inline-block margin-10px-bottom">{{ article.pub_date|date:'d.m.y' }}</p>
+                                    <a href="{{ article.pk }}/" class="alt-font font-weight-500 text-extra-medium text-extra-dark-gray margin-15px-bottom d-block">{{ article.name }}</a>
+                                    <p>{{ article.short_description | safe }}</p>
+                                    <div class="d-flex align-items-center">
+                                        <span class="alt-font text-small mr-auto">{{ article.author }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    {# Footer #}
+    {% include 'blocks/footer.html' %}
+    {# End Footer #}
+    {# ScrollTopButton #}
+    <a class="scroll-top-arrow" href="javascript:void(0);"><i class="feather icon-feather-arrow-up"></i></a>
+    {# End ScrollTopButton #}
+{% endblock %}
