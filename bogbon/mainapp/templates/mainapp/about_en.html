@@ -1,0 +1,41 @@
+{% extends 'wrapper.html' %}
+{% load static %}
+{% block title %}Bog`bon - About{% endblock %}
+{% block content %}
+        {# Header #}
+        {% include 'blocks/header.html' %}
+        {# End Header #}
+        {# TopBlock #}
+        <section class="p-0 mobile-height parallax" data-parallax-background-ratio="0.5"
+                 style="background-image: url('{% static 'img/home-corporate-parallex-bg.jpg' %}');">
+            <div class="opacity-light bg-gradient-black-blue z-index-0"></div>
+            <div class="container position-relative">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-xl-6 col-lg-7 col-md-10 d-flex flex-column justify-content-center text-center full-screen position-relative z-index-1 md-landscape-h-600px">
+                        <h2 class="text-white alt-font font-weight-600 letter-spacing-minus-1 text-shadow-large sm-no-text-shadow">About IN VITRO</h2>
+                    </div>
+                </div>
+            </div>
+{#            <video class="d-xl-block d-none first-block__video" autoplay loop muted playsinline src="/static/img/bg.webm"></video>#}
+        </section>
+        {# End TopBlock #}
+        {# AboutBlock #}
+        <section class="big-section pt-0 mt-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-8 last-paragraph-no-margin">
+                        <h6 class="text-extra-dark-gray alt-font font-weight-600">LABORATORY "IN VITRO"</h6>
+                        <h6 class="text-extra-dark-gray alt-font font-weight-600"><span class="text-dark-gray">Samarkand region, Jambay district</span></h6>
+                        <p class="text-dark-gray">In 2020, a modern In vitro laboratory was built and put into operation as part of the Sadovod agricultural complex. The laboratory is equipped with modern technologies and laboratory equipment from Turkey, China and Iran. The agricultural complex occupies a total area of ​​24.04 hectares, including a laboratory on 0.24 hectares of land and a modern greenhouse on 1 hectare. On 22 hectares of land, seedlings of 32 varieties of fruit trees that are not found in the Republic of Uzbekistan were brought and grown. Five of the laboratory's biotechnologists and agrochemists returned from training at the BETA FIDANCHILIK in vitro laboratory in Adana, Turkey, and at the microbiology laboratory in Erdamli. In the laboratory, seedlings of fruit trees such as walnut, almond, apricot, quince and date are grown, free from various diseases and pests, as well as coastal, resistant to local climatic conditions. In 2022, the laboratory plans to grow 10 million seedlings of various fruit and ornamental grafts. Currently, our laboratory cooperates with the Samarkand Institute of Veterinary Medicine, Tashkent State Agrarian University and the Center for Genomics and Bioinformatics of the Academy of Sciences of the Republic of Uzbekistan. A laboratory of agrochemistry and soil science has been launched at the laboratory, in which a detailed analysis of soil and water samples provided by members of the association is carried out. In this laboratory, 15 different soil chemical parameters are analyzed.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {# End AboutBlock #}
+        {# Footer #}
+        {% include 'blocks/footer.html' %}
+        {# End Footer #}
+        {# ScrollTopButton #}
+        <a class="scroll-top-arrow" href="javascript:void(0);"><i class="feather icon-feather-arrow-up"></i></a>
+        {# End ScrollTopButton #}
+{% endblock %}

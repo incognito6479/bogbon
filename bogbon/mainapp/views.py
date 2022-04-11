@@ -1,5 +1,5 @@
 # InternalImports
-from .models import Article
+from .models import Article, Category
 # End InternalImports
 
 # DjangoImports
@@ -54,4 +54,52 @@ def article_detail(request, id):
     else:
         template = 'mainapp/article/article_detail.html'
     return render(request, template, context)
+
+
+def product_list(request):
+    categories = Category.objects.all()
+    context = {
+        'categories': categories,
+    }
+    if '/uz/' in request.path:
+        template = 'mainapp/product/product_list_uz.html'
+    elif '/en/' in request.path:
+        template = 'mainapp/product/product_list_en.html'
+    else:
+        template = 'mainapp/product/product_list.html'
+    return render(request, template, context)
+
+
+def category_detail(request, category_slug):
+    category = get_object_or_404(Category, slug=category_slug)
+    context = {
+        'category': category,
+    }
+    if '/uz/' in request.path:
+        template = 'mainapp/product/category_detail_uz.html'
+    elif '/en/' in request.path:
+        template = 'mainapp/product/category_detail_en.html'
+    else:
+        template = 'mainapp/product/category_detail.html'
+    return render(request, template, context)
+
+
+def about(request):
+    if '/uz/' in request.path:
+        template = 'mainapp/about_uz.html'
+    elif '/en/' in request.path:
+        template = 'mainapp/about_en.html'
+    else:
+        template = 'mainapp/about.html'
+    return render(request, template)
+
+
+def seedling_list(request):
+    if '/uz/' in request.path:
+        template = 'mainapp/seedling/seedling_list_uz.html'
+    elif '/en/' in request.path:
+        template = 'mainapp/seedling/seedling_list_en.html'
+    else:
+        template = 'mainapp/seedling/seedling_list.html'
+    return render(request, template)
 # End Config

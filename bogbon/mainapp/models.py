@@ -27,3 +27,17 @@ class Article(models.Model):
     class Meta:
         verbose_name = 'Статья'
         verbose_name_plural = 'Статьи'
+
+
+class Category(models.Model):
+    name_ru = models.CharField(verbose_name='Название категории на русском', max_length=200)
+    name_uz = models.CharField(verbose_name='Название категории на узбекском', max_length=200)
+    name_en = models.CharField(verbose_name='Название категории на английском', max_length=200)
+    slug = models.SlugField(verbose_name='URL')
+
+    def __str__(self):
+        return self.name_ru
+
+    class Meta:
+        verbose_name = 'Категория'
+        verbose_name_plural = 'Категории'

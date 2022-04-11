@@ -10,7 +10,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('mainapp.urls', namespace='mainapp')),
-    path('news/', include('news.urls', namespace='news')),
     path('summernote/', include('django_summernote.urls')),
 ]
 # End Config

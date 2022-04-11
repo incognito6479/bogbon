@@ -55,16 +55,19 @@
                     {% if '/en/' in request.path %}
                         <span class="alt-font font-weight-500 d-block text-white margin-20px-bottom xs-margin-10px-bottom">Customer</span>
                         <ul>
+                            <li><a href="{% url 'mainapp:product_list_en' %}">Shop</a></li>
                             <li><a href="{% url 'mainapp:index_en' %}">Client support</a></li>
                         </ul>
                     {% elif '/uz/' in request.path %}
                         <span class="alt-font font-weight-500 d-block text-white margin-20px-bottom xs-margin-10px-bottom">Mijoz</span>
                         <ul>
+                            <li><a href="{% url 'mainapp:product_list_uz' %}">Do'kon</a></li>
                             <li><a href="{% url 'mainapp:index_uz' %}">Mijozlarni qo'llab-quvvatlash</a></li>
                         </ul>
                     {% else %}
                         <span class="alt-font font-weight-500 d-block text-white margin-20px-bottom xs-margin-10px-bottom">Клиентам</span>
                         <ul>
+                            <li><a href="{% url 'mainapp:product_list' %}">Магазин</a></li>
                             <li><a href="{% url 'mainapp:index' %}">Клиентская поддержка</a></li>
                         </ul>
                     {% endif %}

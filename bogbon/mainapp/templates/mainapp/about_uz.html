@@ -1,0 +1,41 @@
+{% extends 'wrapper.html' %}
+{% load static %}
+{% block title %}Bog`bon - Kompaniya haqida{% endblock %}
+{% block content %}
+        {# Header #}
+        {% include 'blocks/header.html' %}
+        {# End Header #}
+        {# TopBlock #}
+        <section class="p-0 mobile-height parallax" data-parallax-background-ratio="0.5"
+                 style="background-image: url('{% static 'img/home-corporate-parallex-bg.jpg' %}');">
+            <div class="opacity-light bg-gradient-black-blue z-index-0"></div>
+            <div class="container position-relative">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-xl-6 col-lg-7 col-md-10 d-flex flex-column justify-content-center text-center full-screen position-relative z-index-1 md-landscape-h-600px">
+                        <h2 class="text-white alt-font font-weight-600 letter-spacing-minus-1 text-shadow-large sm-no-text-shadow">Kompaniya haqida</h2>
+                    </div>
+                </div>
+            </div>
+{#            <video class="d-xl-block d-none first-block__video" autoplay loop muted playsinline src="/static/img/bg.webm"></video>#}
+        </section>
+        {# End TopBlock #}
+        {# AboutBlock #}
+        <section class="big-section pt-0 mt-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-8 last-paragraph-no-margin">
+                        <h6 class="text-extra-dark-gray alt-font font-weight-600">“IN VITRO” LABORATORIYASI</h6>
+                        <h6 class="text-extra-dark-gray alt-font font-weight-600"><span class="text-dark-gray">Samarkand viloyati, Jomboy tumanida</span></h6>
+                        <p class="text-dark-gray">“Bog‘bon” agrokompleksi tarkibida 2020 yilda zamonaviy “In vitro” laboratoriyasi barpo etildi va ishga tushirildi.  LaboratoriyagaTurkiya, Xitoy, Eron davlatlaridan zamonaviy texnologiyalar hamda laboratoriya asbob uskunalari olib kelib o‘rnatilgan. Agrokompleks jami 24,04 gektar maydonda joylashgan bo‘lib, shundan 0,24 gektar yer maydonida laboratoriya, 1 gektar maydonda zamonaviy issiqxona joylashgan. 22 gektar yer maydonida esa O‘zbekiston Respublikasida uchramaydigan 32 xil navli  mevali daraxtlar ko‘chatlari olib kelinib parvarish qilinmoqda. Laboratoriyaning 5 nafar Biotexnolog va agroximik xodimlari Turkiya davlatining Adana viloyatida joylashgan “BETA FIDANCHILIK” in vitro laboratoriyasida  hamda Yerdamli viloyatida mikrobiologiya laboratoriyasida malaka oshirib qaytdilar. Laboratoriyada yong‘oq, bodom, o‘rik, behi va hurmo kabi mevali daraxtlarning turli kasallik va zararkunandalardan holi bo‘lgan hamda qirg‘oqchilikka chidamli, mahalliy iqlim sharoitiga mos navlarining ko‘chatlari yetishtirilmoqda. Laboratoriyada 2022  yilda  10 mln  dona  turli xil mevali va manzarali    payvandtaglar,  ko‘chatlarini yetishtirish ko‘zda tutilgan. Hozirgi kunda Laboratoriyamiz Samarkand Veterinariya medisinasi Instituti, Toshkent Davlat Agrar Univesiteti hamda O‘zbekiston Respublikasi Fanlar Akademiyasi Genomika va Bioinformaftika Markazi bilan hamkorlik aloqalari yo‘lga qo‘yilgan. Laboratoriya qoshida agrokimyo va tuproqshunoslik laboratoriyasi ishga tushirilib uyushma a'zolari tomonidan keltirilgan tuproq va suv namunalari to‘liq tahlil qilinmoqda. Mazkur laboratoriyada tuproqning 15 xil kimyoviy ko‘rsatgichlari tahlil qilinadi.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {# End AboutBlock #}
+        {# Footer #}
+        {% include 'blocks/footer.html' %}
+        {# End Footer #}
+        {# ScrollTopButton #}
+        <a class="scroll-top-arrow" href="javascript:void(0);"><i class="feather icon-feather-arrow-up"></i></a>
+        {# End ScrollTopButton #}
+{% endblock %}

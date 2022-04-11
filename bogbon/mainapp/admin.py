@@ -1,5 +1,5 @@
 # InternalImports
-from .models import Article
+from .models import Article, Category
 # End InternalImports
 
 # DjangoImports
@@ -11,7 +11,7 @@ from django_summernote.admin import SummernoteModelAdmin
 # End ExternalImports
 
 
-class ArticleConfig(SummernoteModelAdmin):
+class ArticleAdmin(SummernoteModelAdmin):
     fields = (
         'name',
         'author',
@@ -33,4 +33,9 @@ class ArticleConfig(SummernoteModelAdmin):
     summernote_fields = ('text', 'text_en', 'text_uz',)
 
 
-admin.site.register(Article, ArticleConfig)
+class CategoryAdmin(admin.ModelAdmin):
+    prepopulated_fields = {'slug': ('name_en',),}
+
+
+admin.site.register(Article, ArticleAdmin)
+admin.site.register(Category, CategoryAdmin)

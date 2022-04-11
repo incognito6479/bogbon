@@ -1,0 +1,74 @@
+{% load static %}
+<header>
+    {# Navigation #}
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent header-light fixed-top navbar-boxed header-reverse-scroll">
+        <div class="container-fluid nav-header-container">
+            <div class="col-auto col-sm-6 col-lg-2 mr-auto pl-lg-0">
+                {% if '/en/' in request.path %}
+                    <a class="navbar-brand" href="{% url 'mainapp:index_en' %}">
+                {% elif '/uz/' in request.path %}
+                    <a class="navbar-brand" href="{% url 'mainapp:index_uz' %}">
+                {% else %}
+                    <a class="navbar-brand" href="{% url 'mainapp:index' %}">
+                {% endif %}
+                <img src="{% static 'img/logo-white.png' %}" class="default-logo" alt="">
+                <img src="{% static 'img/logo-green-dark.png' %}" class="alt-logo" alt="">
+                <img src="{% static 'img/logo-black.png' %}" class="mobile-logo" alt="">
+                </a>
+            </div>
+            <div class="col-auto col-lg-8 menu-order px-lg-0">
+                <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-line"></span>
+                    <span class="navbar-toggler-line"></span>
+                    <span class="navbar-toggler-line"></span>
+                    <span class="navbar-toggler-line"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav alt-font">
+                        {% if '/en/' in request.path %}
+                            <li class="nav-item dropdown megamenu">
+                                <a href="{% url 'mainapp:index_en' %}" class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown megamenu">
+                                <a href="{% url 'mainapp:article_list_en' %}" class="nav-link">Articles</a>
+                            </li>
+{#                            <li class="nav-item dropdown megamenu">#}
+{#                                <a href="{% url 'mainapp:product_list_en' %}" class="nav-link">Shop</a>#}
+{#                            </li>#}
+                        {% elif '/uz/' in request.path %}
+                            <li class="nav-item dropdown megamenu">
+                                <a href="{% url 'mainapp:index_uz' %}" class="nav-link">Bosh sahifa</a>
+                            </li>
+                            <li class="nav-item dropdown megamenu">
+                                <a href="{% url 'mainapp:article_list_uz' %}" class="nav-link">Maqolalar</a>
+                            </li>
+{#                            <li class="nav-item dropdown megamenu">#}
+{#                                <a href="{% url 'mainapp:product_list_uz' %}" class="nav-link">Do'kon</a>#}
+{#                            </li>#}
+                        {% else %}
+                            <li class="nav-item dropdown megamenu">
+                                <a href="{% url 'mainapp:index' %}" class="nav-link">Главная</a>
+                            </li>
+                            <li class="nav-item dropdown megamenu">
+                                <a href="{% url 'mainapp:article_list' %}" class="nav-link">Статьи</a>
+                            </li>
+{#                            <li class="nav-item dropdown megamenu">#}
+{#                                <a href="{% url 'mainapp:product_list' %}" class="nav-link">Магазин</a>#}
+{#                            </li>#}
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+            <div class="col-auto col-lg-2 text-right pr-0 font-size-0">
+                <div class="header-social-icon d-inline-block">
+                    {# Path will get from JS #}
+                    <a href="#" id="header_language_ru"><i>Ru</i></a>
+                    <a href="#" id="header_language_uz"><i>Uz</i></a>
+                    <a href="#" id="header_language_en"><i>En</i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    {# End Navigation #}
+</header>
