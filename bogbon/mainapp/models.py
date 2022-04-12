@@ -1,6 +1,4 @@
-# DjangoImports
 from django.db import models
-# End DjangoImports
 
 
 class Article(models.Model):
@@ -41,3 +39,41 @@ class Category(models.Model):
     class Meta:
         verbose_name = 'Категория'
         verbose_name_plural = 'Категории'
+
+
+class Product(models.Model):
+    created = models.DateTimeField(auto_now_add=True)
+    category = models.ForeignKey('mainapp.Category', on_delete=models.PROTECT, verbose_name='Категория продукта',
+                                blank=True, null=True, related_name='product')
+    title_ru = models.CharField(verbose_name="Название продукта на русском", max_length=255)
+    title_uz = models.CharField(verbose_name="Название продукта на узбекском", max_length=255)
+    title_en = models.CharField(verbose_name="Название продукта на английском", max_length=255)
+    subtitle_en = models.CharField(verbose_name="Подзаголовок на английском", max_length=500)
+    subtitle_ru = models.CharField(verbose_name="Подзаголовок на русском", max_length=500)
+    subtitle_uz = models.CharField(verbose_name="Подзаголовок на узбекском", max_length=500)
+    price = models.FloatField(verbose_name='Цена продукта')
+    show_price = models.FloatField(verbose_name='Показательная цена', blank=True, null=True)
+    description_ru = models.TextField(verbose_name='Описание на русском')
+    description_en = models.TextField(verbose_name='Описание на английском')
+    description_uz = models.TextField(verbose_name='Описание на узбекском')
+    img_hover = models.ImageField(verbose_name='Основное фото', upload_to='products/', blank=True, null=True)
+    img_preview = models.ImageField(verbose_name='Фото при наведении', upload_to='products/', blank=True, null=True)
+
+    def __str__(self):
+        return self.title_ru
+
+    class Meta:
+        verbose_name = 'Товар'
+        verbose_name_plural = 'Товары'
+
+
+class ProductPhoto(models.Model):
+    product = models.ForeignKey('mainapp.Product', on_delete=models.PROTECT, verbose_name='Товар')
+    photo = models.ImageField(verbose_name='Фото продукта', upload_to='products/')
+
+    def __str__(self):
+        return f"{self.product} | {self.photo}"
+
+    class Meta:
+        verbose_name = 'Фото продукта'
+        verbose_name_plural = 'Фото продукта'

@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'mainapp.apps.MainappConfig',
+    'django.contrib.humanize',
     'django_summernote',
 ]
 
@@ -71,8 +72,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'bogbon',
         'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
+        'PASSWORD': '1',
+        'HOST': '127.0.0.1',
         'OPTIONS': {
                'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
                'charset': 'utf8mb4',
@@ -119,3 +120,4 @@ STATICFILES_DIRS = (
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 # End StaticAndMedia
+

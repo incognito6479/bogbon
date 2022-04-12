@@ -2,9 +2,7 @@
 {% load static %}
 {% block title %}Maqolalar{% endblock %}
 {% block content %}
-    {# Header #}
     {% include 'blocks/header.html' %}
-    {# End Header #}
     <section class="p-0 mobile-height parallax" data-parallax-background-ratio="0.5" style="background-image: url('{% static 'img/home-corporate-parallex-bg.jpg' %}');">
         <div class="opacity-light bg-gradient-black-blue z-index-0"></div>
         <div class="container position-relative">
@@ -43,10 +41,6 @@
             </div>
         </div>
     </section>
-    {# Footer #}
     {% include 'blocks/footer.html' %}
-    {# End Footer #}
-    {# ScrollTopButton #}
     <a class="scroll-top-arrow" href="javascript:void(0);"><i class="feather icon-feather-arrow-up"></i></a>
-    {# End ScrollTopButton #}
 {% endblock %}

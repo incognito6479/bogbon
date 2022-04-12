@@ -9,7 +9,7 @@
             <div class="container position-relative">
                 <div class="row justify-content-center">
                     <div class="col-12 col-xl-6 col-lg-7 col-md-10 d-flex flex-column justify-content-center text-center full-screen position-relative z-index-1 md-landscape-h-600px">
-                        <h2 class="text-white alt-font font-weight-600 letter-spacing-minus-1 text-shadow-large sm-no-text-shadow">Товары “IN VITRO”</h2>
+                        <h2 class="text-white alt-font font-weight-600 letter-spacing-minus-1 text-shadow-large sm-no-text-shadow">Mahsulotlar “IN VITRO”</h2>
                     </div>
                 </div>
             </div>
@@ -26,7 +26,7 @@
                                 <li class="grid-item wow animate__fadeIn">
                                     <div class="product-box margin-25px-bottom xs-margin-15px-bottom">
                                         <div class="product-image border-radius-6px">
-                                            <a href="#">
+                                            <a href="{% url 'mainapp:product_detail_uz' product.id %}">
                                                 <img class="default-image" style="width: 100%; height: 40vh; object-fit: cover;"
                                                 src="{% if product.img_preview %} {{ product.img_preview.url  }} {% endif %}"
                                                 alt=""/>
@@ -36,33 +36,27 @@
                                             </a>
                                             <div class="product-overlay bg-gradient-extra-midium-gray-transparent"></div>
                                             <div class="product-hover-bottom text-center padding-30px-tb">
-                                                <a href="{% url 'mainapp:product_detail' product.id %}"
-                                                class="product-link-icon move-top-bottom"
-                                                data-toggle="tooltip"
-                                                data-placement="top" title=""
-                                                data-original-title="Посмотреть">
-                                                    <i class="feather icon-feather-zoom-in"></i>
-                                               </a>
+                                                <a href="{% url 'mainapp:product_detail_uz' product.id %}" class="product-link-icon move-top-bottom" data-toggle="tooltip" data-placement="top" title="" data-original-title="Посмотреть"><i class="feather icon-feather-zoom-in"></i></a>
                                             </div>
                                         </div>
                                         <div class="product-footer text-center padding-25px-top xs-padding-10px-top">
                                             <a href="#" class="text-extra-dark-gray font-weight-500 d-inline-block text-truncate">
                                                 {{ product.title_ru }}
                                             </a>
-                                            <div class="product-price text-medium">{{ product.price|intcomma }} Сум</div>
+                                            <div class="product-price text-medium">{{ product.price|intcomma }} So'm</div>
                                         </div>
                                     </div>
                                 </li>
                                 {% empty %}
-                                <p>Товаров нет</p>
+                                <p>Mahsulot yo'q</p>
                             {% endfor %}
                         </ul>
                     </div>
                     <!-- start sidebar -->
                     <aside class="col-12 col-lg-3 col-md-4 shopping-sidebar">
                         <div class="border-bottom border-color-medium-gray padding-3-rem-bottom margin-3-rem-bottom wow animate__fadeIn">
-                            <span class="shop-title alt-font font-weight-500 text-extra-dark-gray d-block margin-20px-bottom">Выберите категорию</span>
-                            <form method="GET" action="{% url 'mainapp:product_list' %}" class="d-none category_filter_form">
+                            <span class="shop-title alt-font font-weight-500 text-extra-dark-gray d-block margin-20px-bottom">Kategoriya tanlang</span>
+                            <form method="GET" action="{% url 'mainapp:product_list_uz' %}" class="d-none category_filter_form">
                                 <input name="category_id" type="text" value="" class="category_filter_form_input">
                                 <input type="submit" class="category_filter_form_submit">
                             </form>

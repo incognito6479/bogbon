@@ -33,9 +33,9 @@
                             <li class="nav-item dropdown megamenu">
                                 <a href="{% url 'mainapp:article_list_en' %}" class="nav-link">Articles</a>
                             </li>
-{#                            <li class="nav-item dropdown megamenu">#}
-{#                                <a href="{% url 'mainapp:product_list_en' %}" class="nav-link">Shop</a>#}
-{#                            </li>#}
+                            <li class="nav-item dropdown megamenu">
+                                <a href="{% url 'mainapp:product_list_en' %}" class="nav-link">Shop</a>
+                            </li>
                         {% elif '/uz/' in request.path %}
                             <li class="nav-item dropdown megamenu">
                                 <a href="{% url 'mainapp:index_uz' %}" class="nav-link">Bosh sahifa</a>
@@ -43,9 +43,9 @@
                             <li class="nav-item dropdown megamenu">
                                 <a href="{% url 'mainapp:article_list_uz' %}" class="nav-link">Maqolalar</a>
                             </li>
-{#                            <li class="nav-item dropdown megamenu">#}
-{#                                <a href="{% url 'mainapp:product_list_uz' %}" class="nav-link">Do'kon</a>#}
-{#                            </li>#}
+                            <li class="nav-item dropdown megamenu">
+                                <a href="{% url 'mainapp:product_list_uz' %}" class="nav-link">Do'kon</a>
+                            </li>
                         {% else %}
                             <li class="nav-item dropdown megamenu">
                                 <a href="{% url 'mainapp:index' %}" class="nav-link">Главная</a>
@@ -53,9 +53,9 @@
                             <li class="nav-item dropdown megamenu">
                                 <a href="{% url 'mainapp:article_list' %}" class="nav-link">Статьи</a>
                             </li>
-{#                            <li class="nav-item dropdown megamenu">#}
-{#                                <a href="{% url 'mainapp:product_list' %}" class="nav-link">Магазин</a>#}
-{#                            </li>#}
+                            <li class="nav-item dropdown megamenu">
+                                <a href="{% url 'mainapp:product_list' %}" class="nav-link">Магазин</a>
+                            </li>
                         {% endif %}
                     </ul>
                 </div>

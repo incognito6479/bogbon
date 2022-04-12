@@ -1,13 +1,45 @@
-# InternalImports
-from .models import Article, Category
-# End InternalImports
+from .models import Article, Category, Product, ProductPhoto
+from django.shortcuts import render, get_object_or_404, redirect
+from django.db.models import Count
+from django.views.generic import TemplateView, View
+from .bot import send_user_data_to_group
+from django.db.models import Q
 
-# DjangoImports
-from django.shortcuts import render, get_object_or_404
-# End DjangoImports
+
+class ProductDetailView(TemplateView):
+    def get_template_names(self):
+        template = ''
+        if '/uz/' in self.request.path:
+            template = 'mainapp/product/product_detail_uz.html'
+        elif '/en/' in self.request.path:
+            template = 'mainapp/product/product_detail_en.html'
+        else:
+            template = 'mainapp/product/product_detail.html'
+        return template
+
+    def get_context_data(self, **kwargs):
+        context = super(ProductDetailView, self).get_context_data(**kwargs)
+        product = Product.objects.get(id=self.kwargs['pk'])
+        product_photo = ProductPhoto.objects.filter(product_id=self.kwargs['pk'])
+        similar_products = Product.objects.select_related('category') \
+                               .filter(~Q(id=self.kwargs['pk']), category_id=product.category_id)[:4]
+        context['product'] = product
+        context['product_photo'] = product_photo
+        context['similar_products'] = similar_products
+        return context
 
 
-# Config
+class OrderSend(View):
+    def post(self, request):
+        product = Product.objects.get(id=request.POST.get('product_id'))
+        send_user_data_to_group(request.POST, product.title_ru)
+        if '/uz/' in request.path:
+            return redirect('mainapp:product_detail_uz', pk=request.POST.get('product_id'))
+        elif '/en/' in request.path:
+            return redirect('mainapp:product_detail_en', pk=request.POST.get('product_id'))
+        return redirect('mainapp:product_detail', pk=request.POST.get('product_id'))
+
+
 def index(request):
     if '/uz/' in request.path:
         template = 'mainapp/index_uz.html'
@@ -57,9 +89,14 @@ def article_detail(request, id):
 
 
 def product_list(request):
-    categories = Category.objects.all()
+    categories = Category.objects.prefetch_related('product').annotate(product_count=Count('product')).all()
+    products = Product.objects.all()
+    if request.GET.get('category_id'):
+        products = products.filter(category_id=request.GET.get('category_id'))
     context = {
         'categories': categories,
+        'products': products,
+        'category_id': request.GET.get('category_id')
     }
     if '/uz/' in request.path:
         template = 'mainapp/product/product_list_uz.html'
@@ -102,4 +139,3 @@ def seedling_list(request):
     else:
         template = 'mainapp/seedling/seedling_list.html'
     return render(request, template)
-# End Config
