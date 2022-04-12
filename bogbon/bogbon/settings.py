@@ -3,6 +3,7 @@
 # ExternalImports
 from pathlib import Path
 import os
+from environs import Env
 # End ExternalImports
 
 
@@ -20,6 +21,8 @@ DEBUG = True
 
 # AllowedHosts
 ALLOWED_HOSTS = ['*', ]
+env = Env()
+env.read_env()
 # End AllowedHosts
 
 # ApplicationConfig

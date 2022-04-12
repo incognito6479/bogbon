@@ -1,8 +1,12 @@
 import requests
+from environs import Env
 
-BOT_TOKEN = '5258919405:AAHdr_uKAvwNhrYyaL4w80-YSYQM-zlIWio'
-GROUP_CHAT_ID = "-1001725929489"
-USER_ID = "104566710"
+
+env = Env()
+env.read_env()
+
+BOT_TOKEN = env('BOT_TOKEN')
+GROUP_CHAT_ID = env('GROUP_CHAT_ID')
 
 
 def send_user_data_to_group(user, product):
