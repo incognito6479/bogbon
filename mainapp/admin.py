@@ -28,17 +28,17 @@ class ArticleAdmin(SummernoteModelAdmin):
 class ProductAdmin(SummernoteModelAdmin):
     fields = (
         'title_ru',
-        'title_uz',
-        'title_en',
-        'category',
         'subtitle_ru',
+        'description_ru',
+        'title_uz',
         'subtitle_uz',
+        'description_uz',
+        'title_en',
         'subtitle_en',
+        'description_en',
         'price',
         'show_price',
-        'description_ru',
-        'description_uz',
-        'description_en',
+        'category',
         'img_preview',
         'img_hover',
     )
@@ -51,5 +51,18 @@ class CategoryAdmin(admin.ModelAdmin):
 
 admin.site.register(Article, ArticleAdmin)
 admin.site.register(Category, CategoryAdmin)
-admin.site.register(Product, ProductAdmin)
-admin.site.register(ProductPhoto)
+# admin.site.register(ProductPhoto)
+# admin.site.register(Product, ProductAdmin)
+
+
+class ProductPhotoInline(admin.TabularInline):
+    model = ProductPhoto
+    min_num = 2
+    extra = 0
+
+
+@admin.register(Product)
+class ProductModelAdmin(ProductAdmin, admin.ModelAdmin):
+    inlines = [
+        ProductPhotoInline
+    ]

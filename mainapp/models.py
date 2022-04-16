@@ -69,7 +69,7 @@ class Product(models.Model):
 
 class ProductPhoto(models.Model):
     product = models.ForeignKey('mainapp.Product', on_delete=models.PROTECT, verbose_name='Товар')
-    photo = models.ImageField(verbose_name='Фото продукта', upload_to='products/')
+    photo = models.ImageField(verbose_name='Фото продукта', upload_to='products/', blank=True, null=True)
 
     def __str__(self):
         return f"{self.product} | {self.photo}"

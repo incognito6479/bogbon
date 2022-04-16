@@ -73,9 +73,9 @@ WSGI_APPLICATION = 'bogbon.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'a0560516_bogbon',
-        'USER': 'a0560516_bogbon',
-        'PASSWORD': 'giidvuxaam',
+        'NAME': env('DB_NAME'),
+        'USER': env('DB_USER'),
+        'PASSWORD': env('DB_PASSWORD'),
         'HOST': '127.0.0.1',
         'OPTIONS': {
                'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
